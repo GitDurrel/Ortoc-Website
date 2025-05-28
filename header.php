@@ -26,133 +26,63 @@
 <?php wp_body_open(); ?>
 <div id="page" class="page">
 	
-	<header id="site_header" class="site_header">
-		<?php if ( is_front_page() ) : ?>
-			<div class="header_nav">
-				<div class="container">
-					<div class="header_nav_cover row">
-						<div class="hnav_left ofmobile_767">
-							<?php if ( is_front_page() ) : ?>
-								<h1 class="site_logo"><?php the_custom_logo(); ?></h1>
-							<?php else : ?>
-								<p class="site_logo"><?php the_custom_logo(); ?></p>
-							<?php endif; ?>
-						</div>
-						<div class="hnav_right displayflex">
-							<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Header contact infos') ) : ?><?php endif; ?>
-						</div>
-					</div>
-				</div>
-			</div>
-		<?php endif; ?>
-
-		<div class="header_menu">
-			<div class="container">
-				<div class="header_menu_cover row">
-					<div class="ortoc_logo">
-						<?php if ( is_front_page() ) : ?>
-							<h1 class="site_logo"><?php the_custom_logo(); ?></h1>
-						<?php else : ?>
-							<p class="site_logo"><?php the_custom_logo(); ?></p>
-						<?php endif; ?>
-					</div>
-					<div class="menuicon"><span></span></div>
-					<div class="menudusite">
-						<?php
-
-							wp_nav_menu(
-								array(
-									'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-									'theme_location' => 'primary',
-									'menu_id'         => 'menu_ortoc',
-									'menu_class'     => 'menu_ortoc',
-								)
-							);
-						?>
-					</div>
-					
-					<?php
-                        /**
-                            					<div class="hmenu_right displayflex">
-						<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Langues') ) : ?><?php endif; ?>
-						<div class="seach_box">
-							<div class="seach_icon"></div>
-							<div class="seach_box_cover">
-								<div class="seach_icon"></div>
-								<?php get_search_form(); ?>
-							</div>
-						</div>
-						<div class="menuicon"><span></span></div>
-					</div>
-                        */
-
-                    ?>
-
-				</div>
-			</div>
+	<?php // ORTOC Nouvelle Navbar Responsive ?>
+	<header class="ortoc-navbar">
+		<div class="ortoc-navbar-logo">
+			<a href="<?php echo esc_url(home_url('/')); ?>">
+				<?php if (has_custom_logo()) {
+					the_custom_logo();
+				} else {
+					bloginfo('name');
+				} ?>
+			</a>
 		</div>
-	</header><!-- #site-header -->
+		<nav class="ortoc-navbar-menu">
+			<a class="ortoc-navbar-open-btn" href="#"><i class="ion-navicon-round"></i></a>
+			<div class="ortoc-navbar-offcanvas">
+				<a class="ortoc-navbar-close-btn" href="#"><i class="ion-close-round"></i></a>
+				<?php
+				wp_nav_menu(array(
+					'theme_location' => 'primary', // Specifies the menu location registered in functions.php
+					'menu_class'     => 'ortoc-navbar-list', // Adds a class to the <ul> element
+					'container'      => false, // Prevents wrapping the ul with a div
+					'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>', // Ensures it's a ul
+				));
+				?>
+			</div>
+		</nav>
+	</header>
+	<?php // /ORTOC Nouvelle Navbar Responsive ?>
 
 	<div id="site_content" class="site_content">
 		<div id="primary" class="content-area">
 			<main id="main" class="site_main">
 
 <script>
-window.addEventListener('scroll', function() {
-    var header = document.querySelector('.header_menu');
-    if (window.scrollY > 0) {
-        header.style.position = 'fixed';
-        header.style.top = '0';
-    } else {
-        header.style.position = 'absolute';
-        header.style.top = '20px';
-    }
-});
-</script>
-
-<!-- ORTOC Nouvelle Navbar Responsive -->
-<header class="ortoc-navbar">
-  <div class="ortoc-navbar-logo">
-    <a href="<?php echo esc_url(home_url('/')); ?>">
-      <?php if (has_custom_logo()) {
-        the_custom_logo();
-      } else {
-        bloginfo('name');
-      } ?>
-    </a>
-  </div>
-  <nav class="ortoc-navbar-menu">
-    <a class="ortoc-navbar-open-btn" href="#"><i class="ion-navicon-round"></i></a>
-    <div class="ortoc-navbar-offcanvas">
-      <a class="ortoc-navbar-close-btn" href="#"><i class="ion-close-round"></i></a>
-      <?php
-        wp_nav_menu(array(
-          'theme_location' => 'primary',
-          'menu_class' => 'ortoc-navbar-list',
-          'container' => false,
-        ));
-      ?>
-    </div>
-  </nav>
-</header>
-<script>
+// Wait for the DOM to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function() {
+  // Get references to the open button, close button, and the off-canvas menu
   const openBtn = document.querySelector('.ortoc-navbar-open-btn');
   const closeBtn = document.querySelector('.ortoc-navbar-close-btn');
   const offcanvasMenu = document.querySelector('.ortoc-navbar-offcanvas');
-  if(openBtn && closeBtn && offcanvasMenu) {
+
+  // Check if all necessary elements are present on the page
+  if (openBtn && closeBtn && offcanvasMenu) {
+    // Event listener for the open button
     openBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      offcanvasMenu.classList.add('active');
+      e.preventDefault(); // Prevent the default anchor tag behavior
+      offcanvasMenu.classList.add('active'); // Add 'active' class to show the menu
     });
+
+    // Event listener for the close button
     closeBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      offcanvasMenu.classList.remove('active');
+      e.preventDefault(); // Prevent the default anchor tag behavior
+      offcanvasMenu.classList.remove('active'); // Remove 'active' class to hide the menu
     });
   }
 });
 </script>
-<!-- /ORTOC Nouvelle Navbar Responsive -->
+<?php // The HTML comment "<!-- /ORTOC Nouvelle Navbar Responsive -->" was here, replaced by PHP comments or removed if redundant ?>
 
 
 
