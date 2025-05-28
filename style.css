@@ -273,19 +273,18 @@ header#site_header .site_logo img{
 
 /* Hamburger Icon Button */
 .ortoc-navbar-open-btn {
-  display: block; /* Visible on mobile by default */
+  display: inline-flex; /* Changed to inline-flex for better SVG centering */
+  align-items: center;
+  justify-content: center;
   color: #fff;
-  font-size: 1.8rem; /* Adjusted for better visual balance */
+  /* font-size: 1.8rem; Less relevant now with SVG, but can keep for consistency or remove */
   background: none;
   border: none;
   cursor: pointer;
   padding: 5px; /* Add some padding for easier clicking */
   outline: none;
+  line-height: 0; /* Prevents extra space if SVG is treated as inline-block within */
 }
-.ortoc-navbar-open-btn i { /* If using <i> for icon */
-  display: block;
-}
-
 
 /* Off-canvas Menu Container */
 .ortoc-navbar-offcanvas {
@@ -311,20 +310,20 @@ header#site_header .site_logo img{
 
 /* Close Button for Off-canvas Menu */
 .ortoc-navbar-close-btn {
-  display: block;
+  display: inline-flex; /* Changed to inline-flex for better SVG centering */
+  align-items: center;
+  justify-content: center;
   color: #fff;
-  font-size: 1.8rem; /* Adjusted for better visual balance */
+  /* font-size: 1.8rem; Less relevant now with SVG */
   background: none;
   border: none;
-  text-align: right;
+  /* text-align: right; Not needed for flex centering */
   margin-bottom: 20px;
   padding: 5px;
   cursor: pointer;
   outline: none;
   align-self: flex-end; /* Push to the right */
-}
-.ortoc-navbar-close-btn i { /* If using <i> for icon */
-  display: block;
+  line-height: 0; /* Prevents extra space */
 }
 
 /* Navigation List (ul) in Off-canvas */
@@ -346,6 +345,7 @@ header#site_header .site_logo img{
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separator for items */
   transition: color 0.2s, background-color 0.2s;
   font-weight: 500; /* Slightly bolder for readability */
+  position: relative; /* Needed for absolute positioned pseudo-elements like arrows */
 }
 
 .ortoc-navbar-list li:last-child > a { /* Target direct child a for last li */
@@ -359,34 +359,71 @@ header#site_header .site_logo img{
   background-color: rgba(255, 255, 255, 0.05); /* Slight background change on hover */
 }
 
-/* Sub-menu for Mobile */
-.ortoc-navbar-list ul.sub-menu {
+/* Mobile Sub-menu Indicator for Off-Canvas */
+.ortoc-navbar-offcanvas .ortoc-navbar-list li.menu-item-has-children > a {
+    /* padding-right is implicitly handled by the absolute positioning of the arrow */
+}
+
+.ortoc-navbar-offcanvas .ortoc-navbar-list li.menu-item-has-children > a::after {
+    content: '';
+    display: inline-block;
+    width: 8px; 
+    height: 8px;
+    border-style: solid;
+    border-color: #fff; 
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); 
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    margin-top: -6px; /* Adjusted for 8px height + 2px border = approx 5-6px */
+    transition: transform 0.2s ease;
+}
+
+/* Optional: Style for when a submenu is open (requires a class like .submenu-open on the <li> or <a>) */
+.ortoc-navbar-offcanvas .ortoc-navbar-list li.menu-item-has-children.submenu-open > a::after {
+    transform: rotate(-135deg); 
+    margin-top: -3px; /* Adjust if needed for new rotation */
+}
+
+/* Sub-menu Styling for Off-Canvas (Mobile) */
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu {
+  display: none; /* Hidden by default */
   list-style: none;
-  padding-left: 15px; /* Indent sub-menu items */
-  margin: 5px 0 10px 0;
-  background-color: rgba(0,0,0,0.15); /* Slightly darker background for sub-menu */
+  padding-left: 20px; /* Indent submenu items further */
+  margin: 8px 0 10px 0; /* Adjusted margins */
+  background-color: rgba(0,0,0,0.2); /* Slightly different background for visual distinction */
   border-radius: 4px;
 }
 
-.ortoc-navbar-list ul.sub-menu li a {
+/* Show submenu when active */
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu.active,
+.ortoc-navbar-offcanvas .ortoc-navbar-list li.menu-item-has-children.submenu-open > ul.sub-menu {
+    display: block;
+}
+
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu li a {
   padding: 10px 0; /* Adjusted padding for sub-items */
   font-size: 1rem; /* Slightly smaller font for sub-menu items */
   border-bottom: none; /* Remove double borders if parent has one */
-  font-weight: 400;
+  font-weight: 400; /* Lighter font weight for sub-items */
+  color: #f0f0f0; /* Slightly lighter color for sub-menu items if needed */
 }
 
-.ortoc-navbar-list ul.sub-menu li a:hover,
-.ortoc-navbar-list ul.sub-menu li a:focus,
-.ortoc-navbar-list ul.sub-menu li.current-menu-item > a {
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu li a:hover,
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu li a:focus,
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu li.current-menu-item > a {
   color: #FFD700;
   background-color: rgba(255, 255, 255, 0.08);
 }
+
 
 /* Tablet and Desktop Styles */
 @media (min-width: 900px) {
   .ortoc-navbar {
     padding: 0 48px; /* Larger padding for desktop */
     min-height: 70px; /* Can be slightly taller on desktop if desired */
+    border-radius: 0 0 18px 18px; /* Rounded bottom corners */
   }
 
   .ortoc-navbar-open-btn {
@@ -416,10 +453,12 @@ header#site_header .site_logo img{
     flex-direction: row; /* Horizontal list */
     align-items: center; /* Align items vertically */
     gap: 25px; /* Spacing between items */
+    flex-wrap: wrap; /* Allow items to wrap */
   }
   
   .ortoc-navbar-list li a {
     padding: 10px 15px; /* Padding for desktop links */
+    white-space: normal; /* Allow text within links to wrap */
     border-bottom: none; /* No bottom border for desktop */
     font-size: 1rem; 
     font-weight: 500;
@@ -494,24 +533,36 @@ header#site_header .site_logo img{
   
   /* Arrow for parent items with sub-menus on desktop */
   .ortoc-navbar-list li.menu-item-has-children > a {
-    padding-right: 28px; /* Make space for arrow */
+    /* position: relative; /* Already set in previous step */
+    padding-right: 22px; /* Adjusted space for the new arrow */
   }
   
   .ortoc-navbar-list li.menu-item-has-children > a::after {
-    content: '\\25BC'; /* Down arrow character */
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-style: solid;
+    border-color: #fff; /* Arrow color */
+    border-width: 0 2px 2px 0; /* Creates the arrow shape */
+    transform: rotate(45deg);
     position: absolute;
-    right: 10px;
+    right: 8px; /* Adjusted position */
     top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.7em; /* Smaller arrow */
-    color: rgba(255,255,255,0.7);
-    transition: transform 0.2s;
+    margin-top: -5px; /* Fine-tune vertical centering ( (6px height + 2px border*2)/2 = 5px approx ) */
+    transition: transform 0.2s ease;
   }
   
-  .ortoc-navbar-list li.menu-item-has-children:hover > a::after {
-    transform: translateY(-50%) rotate(180deg); /* Flip arrow on hover */
-    color: #FFD700;
+  .ortoc-navbar-list li.menu-item-has-children:hover > a::after,
+  .ortoc-navbar-list li.menu-item-has-children:focus-within > a::after { /* Added focus-within for accessibility */
+    transform: rotate(225deg); /* Rotates to point upwards or change as desired */
+    margin-top: -3px; /* Adjust if needed for new rotation */
+    color: #FFD700; /* Match hover color of link text */
   }
+  .ortoc-navbar-list li.menu-item-has-children:hover > a::after { /* Keep arrow white on hover, or match text */
+    border-color: #FFD700; /* Change arrow color on hover to match text */
+  }
+
 }
 /* --- /ORTOC Navbar Styles --- */
 

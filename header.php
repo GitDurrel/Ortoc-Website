@@ -38,9 +38,20 @@
 			</a>
 		</div>
 		<nav class="ortoc-navbar-menu">
-			<a class="ortoc-navbar-open-btn" href="#"><i class="ion-navicon-round"></i></a>
+			<a class="ortoc-navbar-open-btn" href="#" aria-label="Open menu">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="7" width="20" height="3" fill="white"/>
+                    <rect x="5" y="14" width="20" height="3" fill="white"/>
+                    <rect x="5" y="21" width="20" height="3" fill="white"/>
+                </svg>
+            </a>
 			<div class="ortoc-navbar-offcanvas">
-				<a class="ortoc-navbar-close-btn" href="#"><i class="ion-close-round"></i></a>
+				<a class="ortoc-navbar-close-btn" href="#" aria-label="Close menu">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="7.07107" y="5" width="22" height="3" transform="rotate(45 7.07107 5)" fill="white"/>
+                    <rect x="5" y="22.5711" width="22" height="3" transform="rotate(-45 5 22.5711)" fill="white"/>
+                </svg>
+            </a>
 				<?php
 				wp_nav_menu(array(
 					'theme_location' => 'primary', // Specifies the menu location registered in functions.php
