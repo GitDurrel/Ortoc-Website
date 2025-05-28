@@ -114,89 +114,7 @@ h6,
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
-header#site_header {
-    position: static !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-}
-header#site_header .header_menu {
-    position: fixed !important;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    z-index: 1000;
-    background: #0c4178 !important;
-    box-shadow: 0 4px 24px rgba(12,65,120,0.13);
-    border-radius: 24px;
-    display: flex;
-    align-items: center;
-    padding: 0 32px;
-    min-height: 70px;
-}
-@media (max-width: 900px) {
-    header#site_header .header_menu {
-        max-width: 100vw;
-        left: 0;
-        transform: none;
-        border-radius: 0;
-        padding: 0 10px;
-    }
-    header#site_header .header_menu .ortoc_logo {
-        margin-right: 12px;
-    }
-}
-@media (max-width: 600px) {
-    header#site_header .header_menu {
-        flex-direction: column;
-        align-items: stretch;
-        min-height: 60px;
-        padding: 0 4vw;
-    }
-    header#site_header .header_menu .ortoc_logo {
-        justify-content: center;
-        margin: 0 auto 8px auto;
-    }
-    header#site_header .header_menu .menudusite {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-    }
-    header#site_header .header_menu .menu_ortoc {
-        flex-direction: column;
-        width: 100%;
-    }
-    header#site_header .header_menu .menu_ortoc li {
-        width: 100%;
-        text-align: center;
-    }
-}
-.stickyhome.home  header#site_header .header_menu,
-.sticky header#site_header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-.stickyhome.home  header#site_header .header_menu .ortoc_logo{
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    display: block;
-}
-.sticky.home  header#site_header,
-.stickyhome.home  header#site_header,
-.home header#site_header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-}
+
 body.search-results, body.search-results h1.page-title, body.search-results span, body.search-results h2, body.search-results a, body.search-results p{
     font-family: 'Fredoka', sans-serif;
 }
@@ -209,63 +127,7 @@ article, article h2 {
 .otgs-development-site-front-end {
     display: none !important;
 }
-.stickyhome.home  header#site_header .header_menu{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-/* modifier */
-header#site_header .header_nav{
-    /*padding: 15px 0;*/
-    background-color: #0c4170;
-    padding: 12px 0;
-}
-/* modifier */
-header#site_header .header_nav .header_nav_cover{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-/*header#site_header .header_nav .header_nav_cover .hnav_right{*/
-/*    margin-left: -15px;*/
-/*    margin-right: -15px;*/
-/*}*/
-header#site_header .header_nav .header_nav_cover .hnav_right .widget{
-    width: auto;
-    padding: 0 15px;
-    max-width: 100%;
-}
-header#site_header .header_nav .header_nav_cover .hnav_right .wp-block-media-text {
-    display: flex;
-    align-content: center;
-    width: 100%;
-    max-width: 100%;
-}
-header#site_header .header_nav .header_nav_cover .hnav_right .wp-block-media-text__media{
-    max-width: 48px;
-    margin-right: 10px;
-}
-header#site_header .header_nav .header_nav_cover .hnav_right .wp-block-media-text__content{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 150%;
-    color: #EBF0ED;
-    padding: 0;
-}
-header#site_header .header_nav .header_nav_cover .hnav_right .wp-block-media-text__content p{
-    margin: 0;
-}
-header#site_header .header_nav .header_nav_cover .hnav_right .wp-block-media-text__content p a{
-    text-decoration: none;
-}
-header#site_header .header_nav .header_nav_cover .hnav_right .wp-block-media-text__content p:first-child,
-header#site_header .header_nav .header_nav_cover .hnav_right .wp-block-media-text__content p:first-child a{
-    font-weight: 400;
-    font-size: 13px;
-    color: #EBF0ED;
-}
+
 /* modifier */
 header#site_header .site_logo{
     /*line-height: normal;*/
@@ -286,417 +148,6 @@ header#site_header .site_logo img{
   width: auto;
   transition: all 0.3s ease-in-out;
 }
-.sticky header#site_header .header_menu .site_logo img{
-    max-width: 50px;
-}
-header#site_header .header_nav .header_nav_cover .site_logo .custom-logo-link{
-    display: block;
-}
-/* modifier */
-header#site_header .header_menu{
-    /*background: rgba(255, 255, 255, 1);*/
-    /*border-top: 1px solid #EBF0ED;*/
-    /*padding: 15px 0;*/
-    /*transition: all 0.5s;*/
-    /*-moz-transition: all 0.5s;*/
-    /*-webkit-transition: all 0.5s;*/
-    /*-o-transition: all 0.5s;*/
-    
-    background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 0;
-  border-top: none;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease-in-out
-}
-.home header#site_header .header_menu{
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    background: #0c4178 !important;
-}
-
-/*modfifier */
-
-/*.stickyhome.home header#site_header .header_menu{*/
-/*    background: rgba(255, 255, 255, 1);*/
-/*}*/
-/*.sticky header#site_header .header_menu{*/
-/*    padding: 5px 0;*/
-/*}*/
-
-/* Effet de flottement lors du défilement */
-.sticky header#site_header .header_menu,
-.stickyhome.home header#site_header .header_menu {
-  background: rgba(12,65,120,0.95);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
-
-/*modifier */
-header#site_header .header_menu .header_menu_cover{
-    /*justify-content: space-evenly;*/
-    /*align-items: center;*/
-    
-      display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: auto; /* Changed from fixed 100px to auto */
-  min-height: 100px; /* Set a minimum height */
-  padding: 10px 0; /* Add padding instead of fixed height */
-}
-.home header#site_header .header_menu .ortoc_logo{
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-    display: none;
-}
-
-/* nouvel ajout */
-header#site_header .menudusite {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.home header#site_header .menudusite {
-  max-width: calc(100% - 180px);
-}
-
-/* nouvel ajout */
-header#site_header .header_menu .menu_ortoc {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-header#site_header .header_menu .menu_ortoc li{
-    /*float: left;*/
-    /*position: relative;*/
-    /*padding-left: 5px;*/
-    
-     position: relative;
-    margin: 0 5px;
-    padding: 0;
-}
-header#site_header .header_menu .menu_ortoc li.menu_border{
-    position: relative;
-}
-/*header#site_header .header_menu .menu_ortoc li.menu_border:before{*/
-/*    content: "";*/
-/*    height: 100%;*/
-/*    width: 1px;*/
-/*    background: linear-gradient(284.35deg, #1E78BA 9.64%, #219653 86.39%);*/
-/*    position: absolute;*/
-/*    left: 4px;*/
-/*    top: 0;*/
-/*    bottom: 0;*/
-/*}*/
-header#site_header .header_menu .menu_ortoc li:first-child{
-    padding-left: 0;
-}
-header#site_header .header_menu .menu_ortoc li a{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 20px;
-    color: #fff !important;
-    display: block;
-    position: relative;
-    /*display: inline-block;*/
-    padding: 10px;
-    border-bottom: 3px solid transparent;
-    text-decoration: none;
-    /*outline: none;*/
-    transition: all 0.3s ease-in-out;
-}
-
-/*modifier*/
-header#site_header .header_menu .menu_ortoc li.current_page_item a,
-header#site_header .header_menu .menu_ortoc li.current-menu-item a,
-header#site_header .header_menu .menu_ortoc li.current-menu-ancestor a,
-header#site_header .header_menu .menu_ortoc li:hover a{
-    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
-    border-bottom-color: #FFD700;
-    background: transparent;
-    color: #0c4170;
-    /*box-shadow: none;*/
-}
-
-/*nouvel ajout*/
-
-/* Indicateur pour les éléments avec sous-menu */
-header#site_header .header_menu .menu_ortoc li.menu-item-has-children > a:after {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  margin-left: 8px;
-  transform: rotate(45deg);
-  position: relative;
-  top: -2px;
-}
-
-header#site_header .header_menu .menu_ortoc li .sub-menu{
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 5px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 32px rgb(0 0 0 / 10%);
-    padding: 0;
-    margin: 0;
-    z-index: 2;
-}
-header#site_header .header_menu .menu_ortoc li .sub-menu-toggle{
-    display: none;
-}
-/*modifier*/
-header#site_header .header_menu .menu_ortoc li:hover>.sub-menu{
-    /*display: block;*/
-      opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  display: block;
-}
-header#site_header .header_menu .menu_ortoc li li .sub-menu{
-    left: 100%;
-    top: 0;
-}
-header#site_header .header_menu .menu_ortoc .sub-menu li:last-child{
-    border-bottom: none;
-}
-/*modifer*/
-header#site_header .header_menu .menu_ortoc .sub-menu li{
-    /*width: 100%;*/
-    /*padding: 0 15px !important;*/
-      width: 100%;
-  margin: 0;
-  padding: 0;
-}
-/*modifer*/
-header#site_header .header_menu .menu_ortoc .sub-menu li a{
-    /*white-space: nowrap;*/
-    /*border-bottom: 1px solid #BDBDBD;*/
-    /*padding: 6px 0;*/
-    /*display: block;*/
-    /*font-style: normal;*/
-    /*font-weight: 400;*/
-    /*font-size: 11px;*/
-    /*color: #4F4F4F;*/
-    /*box-shadow: none;*/
-    /*background: none;*/
-      padding: 10px 20px;
-  font-size: 14px;
-  color: #333333;
-  border-bottom: none;
-  border-left: 3px solid transparent;
-  white-space: nowrap;
-}
-/* nouvelajout*/
-/* Style pour les éléments du menu en mode flottant/sticky */
-.sticky header#site_header .header_menu .menu_ortoc li a,
-.home.stickyhome header#site_header .header_menu .menu_ortoc li a {
-  color: #ffffff ;
-}
-
-
-.sticky header#site_header .header_menu .menu_ortoc li:hover > a,
-.sticky header#site_header .header_menu .menu_ortoc li.current-menu-item > a,
-.home.stickyhome header#site_header .header_menu .menu_ortoc li:hover > a,
-.home.stickyhome header#site_header .header_menu .menu_ortoc li.current-menu-item > a {
-  color: #FFD700;
-}
-
-
-/*modifier*/
-/*header#site_header .header_menu .menu_ortoc .sub-menu li.current_page_item>a,*/
-/*header#site_header .header_menu .menu_ortoc .sub-menu li.current-menu-item>a,*/
-/*header#site_header .header_menu .menu_ortoc .sub-menu li:hover>a{*/
-/*    border-bottom-color: #FFD700;*/
-/*}*/
-header#site_header .header_menu .menu_ortoc .sub-menu li:hover > a,
-header#site_header .header_menu .menu_ortoc .sub-menu li.current-menu-item > a {
-  background-color: rgba(255, 215, 0, 0.15);
-  color: #0c4178;
-  border-left-color: #FFD700;
-  border-bottom: none;
-}
-
-/*header#site_header .header_menu .menu_ortoc .sub-menu li li a{*/
-/*    text-transform: uppercase;*/
-/*}*/
-/*modifier*/
-header#site_header .hmenu_right {
-  /*align-items: center;*/
-   display: flex;
-  align-items: center;
-}
-header#site_header .seach_box{
-    margin-left: 15px;
-}
-/*modifier*/
-header#site_header .seach_box .seach_icon{
-    /*width: 18px;*/
-    /*height: 18px;*/
-    /*background: url(assets/images/search.svg) no-repeat center;*/
-    /*cursor: pointer;*/
-      width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: rgba(12, 65, 120, 0.1);
-  transition: all 0.3s ease-in-out;
-  position: relative;
-}
-header#site_header .seach_box .seach_icon:before {
-  content: '';
-  width: 18px;
-  height: 18px;
-  background: url(assets/images/search.svg) no-repeat center;
-  background-size: contain;
-}
-header#site_header .seach_box .seach_icon:hover {
-  background-color: #0c4178;
-}
-
-header#site_header .seach_box .seach_icon:hover:before {
-  filter: brightness(5);
-}
-
-
-.slick-slide:not(.slick-active) .tab_content_item{
-    pointer-events: none;
-}
-
-/*modifier*/
-/*header#site_header .seach_box .seach_box_cover .seach_icon{*/
-/*    background: url(assets/images/white_close.svg) no-repeat center;*/
-/*    position: absolute;*/
-/*    right: 40px;*/
-/*    top: 40px;*/
-/*    z-index: 1;*/
-/*}*/
-header#site_header .seach_box .seach_box_cover .seach_icon {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
-  background-color: #FFD700;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-header#site_header .seach_box .seach_box_cover .seach_icon:before {
-  content: '';
-  width: 20px;
-  height: 20px;
-  background: url(assets/images/white_close.svg) no-repeat center;
-  background-size: contain;
-}
-/*modifier*/
-header#site_header .seach_box .seach_box_cover{
-    /*display: none;*/
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*right: 0;*/
-    /*left: 0;*/
-    /*bottom: 0;*/
-    /*max-width: 100%;*/
-    /*z-index: 9999;*/
-      position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.85);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-/*header#site_header .seach_box .seach_box_cover:before{*/
-/*    content: "";*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    right: 0;*/
-/*    left: 0;*/
-/*    bottom: 0;*/
-/*    background: #000;*/
-/*    opacity: 0.8;*/
-/*}*/
-/*modifier*/
-header#site_header .seach_box .search-form {
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*right: 0;*/
-    /*left: 0;*/
-    /*bottom: 0;*/
-    /*max-width: 100%;*/
-    /*align-content: center;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
-    /*padding: 0 15px;*/
-      width: 80%;
-  max-width: 600px;
-  display: flex;
-  position: relative;
-}
-
-/*ajout/moifier*/
-
-header#site_header .seach_box .search-form .search-field {
-  flex-grow: 1;
-  height: 55px;
-  padding: 10px 20px;
-  font-size: 18px;
-  border: none;
-  border-radius: 4px 0 0 4px;
-  outline: none;
-}
-
-header#site_header .seach_box .search-form .search-submit {
-  background-color: #FFD700;
-  color: #0c4178;
-  border: none;
-  padding: 0 25px;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 0 4px 4px 0;
-  transition: all 0.3s ease-in-out;
-}
-
-header#site_header .seach_box .search-form .search-submit:hover {
-  background-color: #0c4178;
-  color: #ffffff;
-}
-
-/*header#site_header .seach_box .search-form .search-submit,*/
-/*header#site_header .seach_box .search-form .search-field{*/
-/*    margin: 0;*/
-/*    padding: 5px 15px;*/
-/*    line-height: 35px;*/
-/*    border: none;*/
-/*    outline: none;*/
-/*    box-shadow: none;*/
-/*}*/
-/*header#site_header .seach_box .search-form .search-submit{*/
-/*    font-size: 18px;*/
-/*    background: rgb(30, 120, 186);*/
-/*    font-weight: 700;*/
-/*    color: #fff;*/
-/*}*/
 
 .widget_icl_lang_sel_widget .wpml-ls-sidebars-langues{
     width: auto;
@@ -786,186 +237,366 @@ header#site_header .seach_box .search-form .search-submit:hover {
 .widget_icl_lang_sel_widget .wpml-ls-legacy-dropdown .wpml-ls-sub-menu li a:after{
     display: none;
 }
-/* Version responsive - Menu burger pour mobile */
-@media (max-width: 992px) {
-  header#site_header .header_menu_cover {
-    padding: 15px 0;
-    position: relative;
-  }
-  
-  .menuicon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    cursor: pointer;
-    background: rgba(255,255,255,0.85);
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(12,65,120,0.10);
-    transition: box-shadow 0.2s, background 0.2s;
-    z-index: 10001;
-  }
-  .menuicon:hover {
-    background: #FFD700;
-    box-shadow: 0 4px 16px rgba(12,65,120,0.18);
-  }
-  .menuicon span, .menuicon:before, .menuicon:after {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 3px;
-    background-color: #0c4178;
-    position: absolute;
-    left: 8px;
-    border-radius: 2px;
-    transition: all 0.3s cubic-bezier(.4,2,.6,1);
-  }
-  .menuicon:before { top: 12px; }
-  .menuicon span { top: 19px; }
-  .menuicon:after { top: 26px; }
-  .menuicon.active:before {
-    transform: translateY(7px) rotate(45deg);
-  }
-  .menuicon.active span {
-    opacity: 0;
-  }
-  .menuicon.active:after {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-  @media (max-width: 991px) {
-    .menuicon {
-      width: 40px;
-      height: 40px;
-      margin-left: 10px;
-    }
-  }
-  
-  .menuicon span, 
-  .menuicon:before, 
-  .menuicon:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary-blue);
-    position: absolute;
-    transition: var(--transition);
-    border-radius: 3px;
-  }
-  
-  .menuicon:before {
-    top: 0;
-  }
-  
-  .menuicon span {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .menuicon:after {
-    bottom: 0;
-  }
-  
-  /* Menu mobile ouvert */
-  .menuicon.active:before {
-    transform: translateY(10px) rotate(45deg);
-  }
-  
-  .menuicon.active span {
-    opacity: 0;
-  }
-  
-  .menuicon.active:after {
-    transform: translateY(-10px) rotate(-45deg);
-  }
-  
-  /* Menu sur mobile */
-  header#site_header .menudusite {
-    position: fixed;
-    top: 0;
-    right: -280px;
-    width: 280px;
-    height: 100vh;
-    background-color: #ffffff;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    padding: 80px 0 30px;
-    overflow-y: auto;
-    transition: right 0.3s ease;
-  }
-  
-  header#site_header .menudusite.open {
-    right: 0;
-    opacity: 1;
-    visibility: visible;
-    z-index: 10001;
-    background: #fff;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.18);
-  }
-  
-  header#site_header .header_menu .menu_ortoc {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  header#site_header .header_menu .menu_ortoc li {
-    width: 100%;
-    margin: 0;
-  }
-  
-  header#site_header .header_menu .menu_ortoc li a {
-    padding: 15px 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Sous-menu mobile */
-  header#site_header .header_menu .menu_ortoc li .sub-menu {
-    position: static;
-    width: 100%;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    box-shadow: none;
-    display: none;
-    padding: 0;
-    background-color: rgba(0, 0, 0, 0.02);
-  }
-  
-  header#site_header .header_menu .menu_ortoc li .sub-menu li a {
-    padding-left: 35px;
-  }
-  
-  /* Bouton toggle pour sous-menu mobile */
-  header#site_header .header_menu .menu_ortoc li.menu-item-has-children > a:after {
-    transform: rotate(45deg);
-    transition: var(--transition);
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    margin-top: -6px;
-  }
-  
-  header#site_header .header_menu .menu_ortoc li.menu-item-has-children.open > a:after {
-    transform: rotate(-135deg);
-  }
+
+/* --- ORTOC Navbar Styles --- */
+
+/* Base Styles (Mobile - Default) */
+.ortoc-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0c4178; /* Dark blue background */
+  padding: 10px 20px;   /* Padding: 10px top/bottom, 20px left/right */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;     /* High z-index to stay on top */
+  min-height: 64px; /* Minimum height for the navbar */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
-/* Ajout d'un espace pour le contenu principal pour éviter qu'il soit caché sous la navbar fixe */
+.ortoc-navbar-logo a {
+  display: flex;
+  align-items: center;
+  color: #fff;            /* White color for logo text */
+  text-decoration: none;
+  font-weight: bold;
+  /* font-size: 1.6rem; Removed to inherit from theme or use image size */
+}
+
+.ortoc-navbar-logo img {
+  max-height: 40px; /* Max height for logo image */
+  width: auto;
+  margin-right: 8px; /* Space between logo image and text if any */
+}
+
+/* Hamburger Icon Button */
+.ortoc-navbar-open-btn {
+  display: inline-flex; /* Changed to inline-flex for better SVG centering */
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  /* font-size: 1.8rem; Less relevant now with SVG, but can keep for consistency or remove */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px; /* Add some padding for easier clicking */
+  outline: none;
+  line-height: 0; /* Prevents extra space if SVG is treated as inline-block within */
+}
+
+/* Off-canvas Menu Container */
+.ortoc-navbar-offcanvas {
+  position: fixed;
+  top: 0;
+  right: -100vw; /* Start off-screen to the right */
+  width: 80vw;    /* 80% of viewport width */
+  max-width: 300px; /* Maximum width of 300px, slightly more than 280px */
+  height: 100vh;  /* Full viewport height */
+  background: #0c4178; /* Same dark blue background */
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2); /* Slightly stronger shadow */
+  transition: right 0.35s cubic-bezier(0.77, 0, 0.175, 1); /* Smoother transition */
+  z-index: 2000; /* Higher z-index for the off-canvas */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+.ortoc-navbar-offcanvas.active {
+  right: 0; /* Slides into view */
+}
+
+/* Close Button for Off-canvas Menu */
+.ortoc-navbar-close-btn {
+  display: inline-flex; /* Changed to inline-flex for better SVG centering */
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  /* font-size: 1.8rem; Less relevant now with SVG */
+  background: none;
+  border: none;
+  /* text-align: right; Not needed for flex centering */
+  margin-bottom: 20px;
+  padding: 5px;
+  cursor: pointer;
+  outline: none;
+  align-self: flex-end; /* Push to the right */
+  line-height: 0; /* Prevents extra space */
+}
+
+/* Navigation List (ul) in Off-canvas */
+.ortoc-navbar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation List Items (li a) in Off-canvas */
+.ortoc-navbar-list li a {
+  display: block;
+  color: #fff;
+  padding: 12px 0; /* Slightly more padding */
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separator for items */
+  transition: color 0.2s, background-color 0.2s;
+  font-weight: 500; /* Slightly bolder for readability */
+  position: relative; /* Needed for absolute positioned pseudo-elements like arrows */
+}
+
+.ortoc-navbar-list li:last-child > a { /* Target direct child a for last li */
+  border-bottom: none;
+}
+
+.ortoc-navbar-list li a:hover,
+.ortoc-navbar-list li a:focus,
+.ortoc-navbar-list li.current-menu-item > a { /* Style for active/current page */
+  color: #FFD700; /* Gold color for hover/active */
+  background-color: rgba(255, 255, 255, 0.05); /* Slight background change on hover */
+}
+
+/* Mobile Sub-menu Indicator for Off-Canvas */
+.ortoc-navbar-offcanvas .ortoc-navbar-list li.menu-item-has-children > a {
+    /* padding-right is implicitly handled by the absolute positioning of the arrow */
+}
+
+.ortoc-navbar-offcanvas .ortoc-navbar-list li.menu-item-has-children > a::after {
+    content: '';
+    display: inline-block;
+    width: 8px; 
+    height: 8px;
+    border-style: solid;
+    border-color: #fff; 
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); 
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    margin-top: -6px; /* Adjusted for 8px height + 2px border = approx 5-6px */
+    transition: transform 0.2s ease;
+}
+
+/* Optional: Style for when a submenu is open (requires a class like .submenu-open on the <li> or <a>) */
+.ortoc-navbar-offcanvas .ortoc-navbar-list li.menu-item-has-children.submenu-open > a::after {
+    transform: rotate(-135deg); 
+    margin-top: -3px; /* Adjust if needed for new rotation */
+}
+
+/* Sub-menu Styling for Off-Canvas (Mobile) */
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu {
+  display: none; /* Hidden by default */
+  list-style: none;
+  padding-left: 20px; /* Indent submenu items further */
+  margin: 8px 0 10px 0; /* Adjusted margins */
+  background-color: rgba(0,0,0,0.2); /* Slightly different background for visual distinction */
+  border-radius: 4px;
+}
+
+/* Show submenu when active */
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu.active,
+.ortoc-navbar-offcanvas .ortoc-navbar-list li.menu-item-has-children.submenu-open > ul.sub-menu {
+    display: block;
+}
+
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu li a {
+  padding: 10px 0; /* Adjusted padding for sub-items */
+  font-size: 1rem; /* Slightly smaller font for sub-menu items */
+  border-bottom: none; /* Remove double borders if parent has one */
+  font-weight: 400; /* Lighter font weight for sub-items */
+  color: #f0f0f0; /* Slightly lighter color for sub-menu items if needed */
+}
+
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu li a:hover,
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu li a:focus,
+.ortoc-navbar-offcanvas .ortoc-navbar-list ul.sub-menu li.current-menu-item > a {
+  color: #FFD700;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+
+/* Tablet and Desktop Styles */
+@media (min-width: 1024px) {
+  .ortoc-navbar {
+    padding: 0 30px; /* Reduced horizontal padding */
+    min-height: 70px; 
+    border-radius: 0 0 18px 18px; 
+  }
+
+  .ortoc-navbar-open-btn {
+    display: none; /* Hide hamburger icon */
+  }
+
+  .ortoc-navbar-menu { /* Added this selector */
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .ortoc-navbar-offcanvas {
+    position: static;
+    width: auto;
+    max-width: none;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    flex-direction: row; 
+    transition: none; 
+    right: 0 !important; 
+    display: flex !important; 
+    overflow-y: visible; 
+  }
+
+  .ortoc-navbar-close-btn {
+    display: none; 
+  }
+
+  .ortoc-navbar-list {
+    flex-direction: row; 
+    align-items: center; 
+    gap: 15px; /* Reduced gap */
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+  
+  .ortoc-navbar-list li a {
+    padding: 8px 10px; /* Reduced padding */
+    white-space: nowrap; /* Prevent text within links from wrapping */
+    border-bottom: none; 
+    font-size: 0.9rem; /* Slightly reduced font size */
+    font-weight: 500;
+    position: relative; /* For hover effects like underlines */
+    border-radius: 4px; 
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  .ortoc-navbar-list li a:hover,
+  .ortoc-navbar-list li a:focus,
+  .ortoc-navbar-list li.current-menu-item > a {
+    color: #FFD700; /* Gold color for hover/active */
+    background-color: rgba(255, 255, 255, 0.1); 
+  }
+  
+  /* Desktop Sub-menu Styling */
+  .ortoc-navbar-list li {
+    position: relative; /* Needed for absolute positioning of sub-menus */
+  }
+
+  .ortoc-navbar-list ul.sub-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the parent li */
+    left: 0;
+    background-color: #0a345c; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 8px 0;
+    margin-top: 5px; /* Small gap between parent and sub-menu */
+    min-width: 220px; /* Minimum width for dropdown */
+    z-index: 1100; /* Above other navbar items */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    border-radius: 4px; 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0.2s;
+  }
+
+  .ortoc-navbar-list li:hover > ul.sub-menu,
+  .ortoc-navbar-list li:focus-within > ul.sub-menu { 
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .ortoc-navbar-list ul.sub-menu li {
+    width: 100%;
+  }
+
+  .ortoc-navbar-list ul.sub-menu li a {
+    padding: 10px 20px; 
+    font-size: 0.95rem;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    background-color: transparent; 
+    border-radius: 0; /* Sub-menu items typically not rounded individually */
+    font-weight: 400;
+  }
+  
+  .ortoc-navbar-list ul.sub-menu li:last-child > a { /* Target direct child a */
+      border-bottom: none;
+  }
+
+  .ortoc-navbar-list ul.sub-menu li a:hover,
+  .ortoc-navbar-list ul.sub-menu li a:focus,
+  .ortoc-navbar-list ul.sub-menu li.current-menu-item > a {
+    color: #FFD700;
+    background-color: rgba(255, 255, 255, 0.1); 
+  }
+  
+  /* Arrow for parent items with sub-menus on desktop */
+  .ortoc-navbar-list li.menu-item-has-children > a {
+    /* position: relative; /* Already set in previous step */
+    padding-right: 22px; /* Adjusted space for the new arrow */
+  }
+  
+  .ortoc-navbar-list li.menu-item-has-children > a::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-style: solid;
+    border-color: #fff; /* Arrow color */
+    border-width: 0 2px 2px 0; /* Creates the arrow shape */
+    transform: rotate(45deg);
+    position: absolute;
+    right: 8px; /* Adjusted position */
+    top: 50%;
+    margin-top: -5px; /* Fine-tune vertical centering ( (6px height + 2px border*2)/2 = 5px approx ) */
+    transition: transform 0.2s ease;
+  }
+  
+  .ortoc-navbar-list li.menu-item-has-children:hover > a::after,
+  .ortoc-navbar-list li.menu-item-has-children:focus-within > a::after { /* Added focus-within for accessibility */
+    transform: rotate(225deg); /* Rotates to point upwards or change as desired */
+    margin-top: -3px; /* Adjust if needed for new rotation */
+    color: #FFD700; /* Match hover color of link text */
+  }
+  .ortoc-navbar-list li.menu-item-has-children:hover > a::after { /* Keep arrow white on hover, or match text */
+    border-color: #FFD700; /* Change arrow color on hover to match text */
+  }
+
+}
+/* --- /ORTOC Navbar Styles --- */
+
+/* Adjust content padding for fixed navbar */
 #site_content {
-  padding-top: 90px !important;
+  padding-top: 64px !important; /* Default for mobile */
 }
 
 .home #site_content {
-  padding-top: 0; /* Sur la page d'accueil, pas besoin de padding car le header est en absolute */
+  padding-top: 0 !important; 
 }
 
-
-.home #site_content{
+@media (min-width: 1024px) { /* Changed breakpoint */
+  #site_content {
+    padding-top: 70px !important; /* Adjusted for desktop navbar min-height */
+  }
+  .home #site_content { /* Ensure home still has no padding-top on desktop */
     padding-top: 0 !important;
+  }
 }
+
+/* Ensure body also has padding if #site_content is not the direct wrapper after body */
+body:not(.home) {
+    /* If #site_content is not a direct child of body and there's another wrapper,
+       that wrapper might need the padding. Or, if #page is the main wrapper: */
+    /* padding-top: 70px; */ /* Consider this if #site_content rule isn't enough */
+}
+
 .title_width_gradient {
     position: relative;
     text-align: center;
@@ -5322,223 +4953,4 @@ footer#site_footer .phone_footer a {
     color: #FFD700 !important;
 }
 
-/* --- MENU BURGER MOBILE CLEAN --- */
-.menuicon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  cursor: pointer;
-  background: rgba(255,255,255,0.85);
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(12,65,120,0.10);
-  transition: box-shadow 0.2s, background 0.2s;
-  z-index: 10001;
-}
-.menuicon:hover {
-  background: #FFD700;
-  box-shadow: 0 4px 16px rgba(12,65,120,0.18);
-}
-.menuicon span, .menuicon:before, .menuicon:after {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 3px;
-  background-color: #0c4178;
-  position: absolute;
-  left: 8px;
-  border-radius: 2px;
-  transition: all 0.3s cubic-bezier(.4,2,.6,1);
-}
-.menuicon:before { top: 12px; }
-.menuicon span { top: 19px; }
-.menuicon:after { top: 26px; }
-.menuicon.active:before {
-  transform: translateY(7px) rotate(45deg);
-}
-.menuicon.active span {
-  opacity: 0;
-}
-.menuicon.active:after {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-/* --- MENU MOBILE SLIDE --- */
-.menudusite {
-  position: fixed;
-  top: 0;
-  right: -280px;
-  width: 280px;
-  height: 100vh;
-  background: #fff;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-  z-index: 1000;
-  padding: 80px 0 30px;
-  overflow-y: auto;
-  opacity: 0;
-  visibility: hidden;
-  transition: right 0.4s cubic-bezier(.4,2,.6,1), opacity 0.3s, visibility 0.3s;
-}
-.menudusite.open {
-  right: 0;
-  opacity: 1;
-  visibility: visible;
-  z-index: 10001;
-  background: #fff;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.18);
-}
-
-@media (max-width: 991px) {
-  .menuicon {
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
-  }
-  .menudusite {
-    width: 80vw;
-    max-width: 320px;
-    padding: 80px 0 30px;
-  }
-}
-
-header#site_header .menudusite.active {
-  /* Désactivé pour éviter le conflit, on utilise .open */
-  right: -280px !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
-@media (min-width: 992px) {
-  .menuicon {
-    display: none !important;
-  }
-  .menudusite {
-    position: static !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    right: 0 !important;
-    transform: none !important;
-    width: auto !important;
-    height: auto !important;
-    background: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    z-index: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-  }
-}
-
-/* ORTOC Nouvelle Navbar Responsive */
-.ortoc-navbar {
-  width: 100%;
-  background: #0c4178;
-  position: relative;
-  z-index: 1002;
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-}
-.ortoc-navbar-logo a {
-  display: flex;
-  align-items: center;
-  font-size: 1.6rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-.ortoc-navbar-menu {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.ortoc-navbar-open-btn {
-  display: inline-block;
-  color: #fff;
-  font-size: 2.2rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
-}
-.ortoc-navbar-offcanvas {
-  position: fixed;
-  top: 0;
-  right: -100vw;
-  width: 80vw;
-  max-width: 340px;
-  height: 100vh;
-  background: #0c4178;
-  box-shadow: -2px 0 16px rgba(0,0,0,0.08);
-  transition: right 0.3s cubic-bezier(.77,0,.18,1);
-  z-index: 2000;
-  display: flex;
-  flex-direction: column;
-  padding: 32px 24px 24px 24px;
-}
-.ortoc-navbar-offcanvas.active {
-  right: 0;
-}
-.ortoc-navbar-close-btn {
-  color: #fff;
-  font-size: 2.2rem;
-  align-self: flex-end;
-  margin-bottom: 24px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
-}
-.ortoc-navbar-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.ortoc-navbar-list li a {
-  color: #fff;
-  font-size: 1.2rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.ortoc-navbar-list li a:hover {
-  color: #219653;
-}
-@media (min-width: 900px) {
-  .ortoc-navbar {
-    padding: 0 48px;
-  }
-  .ortoc-navbar-open-btn {
-    display: none;
-  }
-  .ortoc-navbar-offcanvas {
-    position: static;
-    width: auto;
-    max-width: none;
-    height: auto;
-    background: none;
-    box-shadow: none;
-    transition: none;
-    flex-direction: row;
-    padding: 0;
-    right: 0;
-    display: flex !important;
-  }
-  .ortoc-navbar-close-btn {
-    display: none;
-  }
-  .ortoc-navbar-list {
-    flex-direction: row;
-    gap: 32px;
-  }
-}
-/* /ORTOC Nouvelle Navbar Responsive */
+/* Placeholder to ensure the diff is valid if the search block is at the EOF */
