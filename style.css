@@ -419,15 +419,21 @@ header#site_header .site_logo img{
 
 
 /* Tablet and Desktop Styles */
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .ortoc-navbar {
-    padding: 0 48px; /* Larger padding for desktop */
-    min-height: 70px; /* Can be slightly taller on desktop if desired */
-    border-radius: 0 0 18px 18px; /* Rounded bottom corners */
+    padding: 0 30px; /* Reduced horizontal padding */
+    min-height: 70px; 
+    border-radius: 0 0 18px 18px; 
   }
 
   .ortoc-navbar-open-btn {
     display: none; /* Hide hamburger icon */
+  }
+
+  .ortoc-navbar-menu { /* Added this selector */
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .ortoc-navbar-offcanvas {
@@ -438,29 +444,29 @@ header#site_header .site_logo img{
     background: none;
     box-shadow: none;
     padding: 0;
-    flex-direction: row; /* Align items horizontally */
-    transition: none; /* No transition needed for static display */
-    right: 0 !important; /* Override if any inline styles are applied by JS by mistake */
-    display: flex !important; /* Ensure it's displayed */
-    overflow-y: visible; /* Reset overflow */
+    flex-direction: row; 
+    transition: none; 
+    right: 0 !important; 
+    display: flex !important; 
+    overflow-y: visible; 
   }
 
   .ortoc-navbar-close-btn {
-    display: none; /* Hide close button */
+    display: none; 
   }
 
   .ortoc-navbar-list {
-    flex-direction: row; /* Horizontal list */
-    align-items: center; /* Align items vertically */
-    gap: 25px; /* Spacing between items */
-    flex-wrap: wrap; /* Allow items to wrap */
+    flex-direction: row; 
+    align-items: center; 
+    gap: 15px; /* Reduced gap */
+    flex-wrap: nowrap; /* Prevent wrapping */
   }
   
   .ortoc-navbar-list li a {
-    padding: 10px 15px; /* Padding for desktop links */
-    white-space: normal; /* Allow text within links to wrap */
-    border-bottom: none; /* No bottom border for desktop */
-    font-size: 1rem; 
+    padding: 8px 10px; /* Reduced padding */
+    white-space: nowrap; /* Prevent text within links from wrapping */
+    border-bottom: none; 
+    font-size: 0.9rem; /* Slightly reduced font size */
     font-weight: 500;
     position: relative; /* For hover effects like underlines */
     border-radius: 4px; 
@@ -568,17 +574,27 @@ header#site_header .site_logo img{
 
 /* Adjust content padding for fixed navbar */
 #site_content {
-  padding-top: 64px !important; /* Navbar height */
+  padding-top: 64px !important; /* Default for mobile */
 }
 
 .home #site_content {
-  padding-top: 0 !important; /* No padding on home if header is absolute there */
+  padding-top: 0 !important; 
 }
+
+@media (min-width: 1024px) { /* Changed breakpoint */
+  #site_content {
+    padding-top: 70px !important; /* Adjusted for desktop navbar min-height */
+  }
+  .home #site_content { /* Ensure home still has no padding-top on desktop */
+    padding-top: 0 !important;
+  }
+}
+
 /* Ensure body also has padding if #site_content is not the direct wrapper after body */
 body:not(.home) {
     /* If #site_content is not a direct child of body and there's another wrapper,
        that wrapper might need the padding. Or, if #page is the main wrapper: */
-    /* padding-top: 64px; */ /* Uncomment if needed */
+    /* padding-top: 70px; */ /* Consider this if #site_content rule isn't enough */
 }
 
 .title_width_gradient {
@@ -4935,117 +4951,6 @@ header#site_header .header_menu .menu_ortoc li .sub-menu li:first-child a {
 
 footer#site_footer .phone_footer a {
     color: #FFD700 !important;
-}
-
-/* --- MENU BURGER MOBILE CLEAN --- */
-.menuicon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  cursor: pointer;
-  background: rgba(255,255,255,0.85);
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(12,65,120,0.10);
-  transition: box-shadow 0.2s, background 0.2s;
-  z-index: 10001;
-}
-.menuicon:hover {
-  background: #FFD700;
-  box-shadow: 0 4px 16px rgba(12,65,120,0.18);
-}
-.menuicon span, .menuicon:before, .menuicon:after {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 3px;
-  background-color: #0c4178;
-  position: absolute;
-  left: 8px;
-  border-radius: 2px;
-  transition: all 0.3s cubic-bezier(.4,2,.6,1);
-}
-.menuicon:before { top: 12px; }
-.menuicon span { top: 19px; }
-.menuicon:after { top: 26px; }
-.menuicon.active:before {
-  transform: translateY(7px) rotate(45deg);
-}
-.menuicon.active span {
-  opacity: 0;
-}
-.menuicon.active:after {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-/* --- MENU MOBILE SLIDE --- */
-.menudusite {
-  position: fixed;
-  top: 0;
-  right: -280px;
-  width: 280px;
-  height: 100vh;
-  background: #fff;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-  z-index: 1000;
-  padding: 80px 0 30px;
-  overflow-y: auto;
-  opacity: 0;
-  visibility: hidden;
-  transition: right 0.4s cubic-bezier(.4,2,.6,1), opacity 0.3s, visibility 0.3s;
-}
-.menudusite.open {
-  right: 0;
-  opacity: 1;
-  visibility: visible;
-  z-index: 10001;
-  background: #fff;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.18);
-}
-
-@media (max-width: 991px) {
-  .menuicon {
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
-  }
-  .menudusite {
-    width: 80vw;
-    max-width: 320px;
-    padding: 80px 0 30px;
-  }
-}
-
-header#site_header .menudusite.active {
-  /* Désactivé pour éviter le conflit, on utilise .open */
-  right: -280px !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
-@media (min-width: 992px) {
-  .menuicon {
-    display: none !important;
-  }
-  .menudusite {
-    position: static !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    right: 0 !important;
-    transform: none !important;
-    width: auto !important;
-    height: auto !important;
-    background: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    z-index: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-  }
 }
 
 /* Placeholder to ensure the diff is valid if the search block is at the EOF */
